@@ -1,0 +1,28 @@
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  width: 80vmin;
+  height: 80vmin;
+}
+
+.display {
+  flex: 8;
+  background: #eee;
+  width: 80vw;
+  font-size: 48px;
+  line-height: 1em;
+}
+
+.button {
+  flex: 2;
+  background: orange;
+  color: white;
+  font: 1.8rem inherit bold;
+  width: 5em;
+  height: 2em;
+  text-transform: uppercase;
+  border: solid 1px;
+  border-radius: 10px;
+}
