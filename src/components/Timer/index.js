@@ -45,10 +45,7 @@ class Timer extends Component {
         duration: 0,
         active: false,
       });
-      this.props.createRound({
-        timestamp: Date.parse(this.state.startTime),
-        duration: duration,
-      });
+      this.props.createRound(Date.parse(this.state.startTime), duration);
     }
   };
 
