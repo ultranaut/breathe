@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import styles from './Timer.module.css';
 import { createRound } from '../../actions';
+import formatTime from '../../utils/formatTime';
 
 class Timer extends Component {
   state = {
@@ -10,18 +11,6 @@ class Timer extends Component {
     duration: 0,
     active: false,
     intervalId: null,
-  };
-
-  formatTime = () => {
-    const elapsed = this.state.duration / 1000;
-    const mins = Math.floor(elapsed / 60);
-    const secs = Math.floor(elapsed % 60);
-    const decs = Math.round((elapsed - Math.floor(elapsed)) * 10);
-
-    let formatted = mins.toString().padStart(2, 0) + ':';
-    formatted += secs.toString().padStart(2, 0) + '.';
-    formatted += decs.toString().slice(0, 1);
-    return formatted;
   };
 
   updateDuration = () => {
@@ -53,7 +42,9 @@ class Timer extends Component {
     return (
       <div>
         <div className={styles.timer} onClick={this.toggleTimer}>
-          <div className={styles.display}>{this.formatTime()}</div>
+          <div className={styles.display}>
+            {formatTime(this.state.duration)}
+          </div>
           <button className={styles.button}>
             {this.state.active ? 'Stop' : 'Start'}
           </button>
