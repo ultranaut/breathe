@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import styles from './Timer.module.css';
+import { createRound } from '../../actions';
 
 class Timer extends Component {
   state = {
@@ -39,8 +42,12 @@ class Timer extends Component {
       clearInterval(this.state.intervalId);
       const duration = new Date() - this.state.startTime;
       this.setState({
-        duration,
+        duration: 0,
         active: false,
+      });
+      this.props.createRound({
+        timestamp: Date.parse(this.state.startTime),
+        duration: duration,
       });
     }
   };
@@ -50,11 +57,13 @@ class Timer extends Component {
       <div>
         <div className={styles.timer} onClick={this.toggleTimer}>
           <div className={styles.display}>{this.formatTime()}</div>
-          <button className={styles.button}>{this.state.active ? 'Stop' : 'Start'}</button>
+          <button className={styles.button}>
+            {this.state.active ? 'Stop' : 'Start'}
+          </button>
         </div>
       </div>
     );
   }
 }
 
-export default Timer;
+export default connect(null, { createRound })(Timer);
