@@ -20,16 +20,16 @@ class Timer extends Component {
 
   toggleTimer = () => {
     if (!this.state.active) {
+      const intervalId = setInterval(this.updateDuration, 103);
       this.setState({
         duration: 0,
         startTime: new Date(),
         active: true,
+        intervalId,
       });
-      const intervalId = setInterval(this.updateDuration, 103);
-      this.setState({ intervalId });
     } else {
-      clearInterval(this.state.intervalId);
       const duration = new Date() - this.state.startTime;
+      clearInterval(this.state.intervalId);
       this.setState({
         duration: 0,
         active: false,

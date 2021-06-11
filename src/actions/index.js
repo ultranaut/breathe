@@ -1,6 +1,8 @@
+import { CREATE_ROUND } from './types';
+
 export const createRound = (timestamp, duration) => {
   return {
-    type: 'CREATE_ROUND',
+    type: CREATE_ROUND,
     payload: {
       timestamp,
       duration,
