@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Timer from './Timer/';
-import RoundsDisplay from './RoundsDisplay';
+import Timer from '../Timer/';
+import RoundsDisplay from '../RoundsDisplay';
 
 const App = () => {
   return (
