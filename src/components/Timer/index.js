@@ -43,7 +43,7 @@ class Timer extends Component {
       <div className={styles.timer} onClick={this.toggleTimer}>
         <div className={styles.display}>
           <div className={styles.duration}>
-            {formatTime(this.state.duration)}
+            {formatTime(this.state.duration, true)}
           </div>
         </div>
         <button className={styles.button}>

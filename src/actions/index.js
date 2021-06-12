@@ -1,4 +1,4 @@
-import { CREATE_ROUND } from './types';
+import { CREATE_ROUND, RESET_ROUNDS } from './types';
 
 export const createRound = (timestamp, duration) => {
   return {
@@ -8,4 +8,8 @@ export const createRound = (timestamp, duration) => {
       duration,
     },
   };
+};
+
+export const resetRounds = () => {
+  return { type: RESET_ROUNDS };
 };
