@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
+import styles from './RoundsDisplay.module.css';
 import formatTime from '../../utils/formatTime';
 
 const RoundsDisplay = ({ rounds }) => {
@@ -10,7 +12,7 @@ const RoundsDisplay = ({ rounds }) => {
     );
   });
   return (
-    <div>
+    <div className={styles.rounds}>
       <h2>Rounds</h2>
       <div>{renderedRounds}</div>
     </div>

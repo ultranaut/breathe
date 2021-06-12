@@ -40,15 +40,11 @@ class Timer extends Component {
 
   render() {
     return (
-      <div>
-        <div className={styles.timer} onClick={this.toggleTimer}>
-          <div className={styles.display}>
-            {formatTime(this.state.duration)}
-          </div>
-          <button className={styles.button}>
-            {this.state.active ? 'Stop' : 'Start'}
-          </button>
-        </div>
+      <div className={styles.timer} onClick={this.toggleTimer}>
+        <div className={styles.display}>{formatTime(this.state.duration)}</div>
+        <button className={styles.button}>
+          {this.state.active ? 'Stop' : 'Start'}
+        </button>
       </div>
     );
   }

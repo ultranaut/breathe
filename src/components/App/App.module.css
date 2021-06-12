@@ -1,0 +1,23 @@
+/* box-sizing reset */
+.container {
+  box-sizing: border-box;
+}
+
+:is(*, *:before, *:after) {
+  box-sizing: inherit;
+}
+
+/* styles */
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  /* flex-container */
+  display: flex;
+  flex-direction: column;
+}
+
+.container > div {
+  border: solid 1px blue;
+  padding: 5% 10%;
+}
