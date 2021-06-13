@@ -1,6 +1,5 @@
 .rounds {
-  padding-top: 5%;
-  border: solid 1px #eee;
+  padding: 0 5% 10%;
 }
 
 .dataTable {
@@ -33,17 +32,24 @@
   border-radius: 0 0.5em 0.5em 0;
 }
 
-.rounds button {
+/* buttons */
+.actions {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.actions button {
   padding: 0.5em;
   border: none;
   border-radius: 0.5em;
   text-align: center;
   width: 45%;
   font-weight: bolder;
+  text-transform: uppercase;
+  color: #555;
 }
 
-.rounds button.saveButton {
+.actions button.saveButton {
   background-color: darkorange;
   color: #eee;
-  text-transform: uppercase;
 }

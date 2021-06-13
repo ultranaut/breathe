@@ -44,14 +44,12 @@ const RoundsDisplay = ({ rounds, resetRounds }) => {
       </table>
 
       {rounds.length > 0 && (
-        <>
-          <div>
-            <button className={styles.resetButton} onClick={resetRounds}>
-              Reset
-            </button>
-            <button className={styles.saveButton}>Save</button>
-          </div>
-        </>
+        <div className={styles.actions}>
+          <button className={styles.resetButton} onClick={resetRounds}>
+            Reset
+          </button>
+          <button className={styles.saveButton}>Save</button>
+        </div>
       )}
     </div>
   );

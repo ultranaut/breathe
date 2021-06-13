@@ -1,7 +1,6 @@
 /* box-sizing reset */
 .container {
   box-sizing: border-box;
-  color: #444;
 }
 
 :is(*, *:before, *:after) {
@@ -12,13 +11,12 @@
 .container {
   width: 100vw;
   height: 100vh;
+  min-width: 250px;
+  max-width: 420px;
+  color: #555;
   font-size: 1.5rem;
 
   /* flex-container */
   display: flex;
   flex-direction: column;
-}
-
-.container > div {
-  padding: 15% 5% 10%;
 }
